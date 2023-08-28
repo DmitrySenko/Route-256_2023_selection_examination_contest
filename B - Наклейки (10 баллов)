@@ -1,0 +1,7 @@
+s = input()
+n = int(input())
+for i in range(n):
+    line = input().split()
+    s = s[:int(line[0]) - 1] + line[2] + s[int(line[1]):]
+print(s)
+    
