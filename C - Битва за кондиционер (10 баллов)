@@ -1,0 +1,19 @@
+n = int(input())
+for i in range(n):
+    m = int(input())
+    interval = [15, 30]
+    a = True
+    for j in range(m):
+        pref = input()
+        if '>=' in pref:
+            if int(pref[2::]) in range(interval[0], interval[1] + 1):
+                interval[0] = int(pref[2::])
+            elif int(pref[2::]) > interval[1]: a = False
+        elif '<=' in pref:
+            if int(pref[2::]) in range(interval[0], interval[1] + 1):
+                interval[1] = int(pref[2::])
+            elif int(pref[2::]) < interval[0]: a = False
+        if a == True: print(interval[0])
+        else: print(-1)
+    print(' ')  
+                
